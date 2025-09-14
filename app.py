@@ -3,7 +3,6 @@ import requests
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 import pandas as pd
-import plotly.graph_objects as go
 
 # -------------------------------
 # Hackathon Branding Header
@@ -23,15 +22,15 @@ st.markdown(
 # Scam / Drainer Detection Patterns
 # -------------------------------
 SCAM_PATTERNS = [
-    "uint256.max",           
-    "eth_requestaccounts",   
-    "approve",               
-    "transferfrom",          
-    "window.ethereum",       
-    "privatekey",            
-    "seedphrase",            
-    "sign",                  
-    "eth_sendtransaction",   
+    "uint256.max",
+    "eth_requestaccounts",
+    "approve",
+    "transferfrom",
+    "window.ethereum",
+    "privatekey",
+    "seedphrase",
+    "sign",
+    "eth_sendtransaction",
 ]
 
 st.write("🔍 Detect wallet-draining scripts and suspicious backend code in crypto websites.")
@@ -139,39 +138,6 @@ if url:
             """,
             unsafe_allow_html=True
         )
-
-        # -------------------------------
-        # 📊 Visualization (Gauge + Pie)
-        # -------------------------------
-        st.subheader("Visual Risk Analysis")
-
-        # Gauge Chart
-        fig_gauge = go.Figure(go.Indicator(
-            mode="gauge+number+delta",
-            value=risk_score,
-            title={'text': "Risk Score"},
-            gauge={
-                'axis': {'range': [0, 20]},
-                'bar': {'color': risk_color},
-                'steps': [
-                    {'range': [0, 5], 'color': "#16a34a"},
-                    {'range': [5, 10], 'color': "#facc15"},
-                    {'range': [10, 20], 'color': "#dc2626"}
-                ],
-            }
-        ))
-        st.plotly_chart(fig_gauge, use_container_width=True)
-
-        # Pie Chart (safe vs risk)
-        safe_score = max(0, 20 - risk_score)
-        fig_pie = go.Figure(data=[go.Pie(
-            labels=['Safe', 'Risk'],
-            values=[safe_score, risk_score],
-            marker=dict(colors=['#16a34a', '#dc2626']),
-            hole=0.4
-        )])
-        fig_pie.update_layout(title_text="Safe vs Risk Breakdown")
-        st.plotly_chart(fig_pie, use_container_width=True)
 
         # -------------------------------
         # Suspicious Script Details
