@@ -30,18 +30,12 @@ This project aligns with the 2nd Thales GenTech India Hackathon Cybersecurity th
 **Usage**
 - Enter any website URL in the scan input box.
 - The tool will analyze its scripts for suspicious patterns.
-- View the risk score, badge, and detailed list of detected issues.
+Try the app live on > https://wallet-connect-scam-detector.streamlit.app/
 
-**Contribution**
+FIY
 Contributions and feedback are welcome! Feel free to open issues or pull requests.
 
-**License**
-This project is open-source and free to use for educational and cybersecurity awareness purposes.
-
 ---
-
-
-
 
 ### Contribution & License
 This project is open-source and free to use for educational and cybersecurity awareness purposes.
