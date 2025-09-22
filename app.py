@@ -53,8 +53,7 @@ def fetch_script_content(script_url):
 st.markdown(
     """
     <div style="text-align:center; padding:20px; background-color:#0f172a; border-radius:12px; margin-bottom:20px;">
-        <h1 style="color:#00ffcc;">🛡️ Thales Hackathon 2025</h1>
-        <h2 style="color:white;">Wallet-Connect Scam Detector</h2>
+        <h1 style="color:#00ffcc;">Wallet-Connect Scam Detector</h1>
         <p style="color:#94a3b8;">Protecting India’s Digital Space | Cybersecurity Innovation</p>
     </div>
     """,
